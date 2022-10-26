@@ -2,10 +2,10 @@ name: Publish Docker Image
 
 on:
   push:
-    branches: [ 10.7 ]
+    branches: [ 10.9 ]
 env:
   IMAGE_NAME: apache
-  VERSION: 10.7
+  VERSION: 10.9
 jobs:
   buildImage:
     name: Build Docker Image
@@ -28,4 +28,4 @@ jobs:
 
       - uses: actions/checkout@v2
       - name: Build Container image
-        run: docker buildx build --platform linux/amd64,linux/arm64,linux/ppc64le,linux/s390x --tag ghcr.io/deck-app/mariadb:10.7 . --push
+        run: docker buildx build --platform linux/amd64,linux/arm64,linux/ppc64le,linux/s390x --tag ghcr.io/deck-app/mariadb:10.9 . --push
