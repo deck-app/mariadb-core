@@ -8,6 +8,7 @@ services:
       - 'MARIADB_USER=${DB_USER}'
       - 'MARIADB_PASSWORD=${DB_PASSWORD}'
       - 'MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}'
+      - 'security-opt seccomp=unconfined'
     volumes:
       - '${DATA_PATH_HOST}:/var/lib/mysql'
     ports:
